@@ -16,23 +16,25 @@ public class Game {
     @Column(name ="game_year")
     private int year;
     private String genre;
-    private String platform;
+    private String platforms;
     private Double score;
     private String imgUrl;
-    private String logDescription;
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
 
     public Game() {}
 
-    public Game(Long id, String title, int year, String genre, String platform, Double score, String imgUrl, String logDescription, String shortDescription) {
+    public Game(Long id, String title, int year, String genre, String platforms, Double score, String imgUrl, String longDescription, String shortDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.genre = genre;
-        this.platform = platform;
+        this.platforms = platforms;
         this.score = score;
         this.imgUrl = imgUrl;
-        this.logDescription = logDescription;
+        this.longDescription = longDescription;
         this.shortDescription = shortDescription;
     }
 
@@ -82,12 +84,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlatform() {
-        return platform;
+    public String getplatforms() {
+        return platforms;
     }
 
-    public void setPlatform(String platform) {
-        this.platform = platform;
+    public void setplatforms(String platforms) {
+        this.platforms = platforms;
     }
 
     public Double getScore() {
@@ -106,12 +108,12 @@ public class Game {
         this.imgUrl = imgUrl;
     }
 
-    public String getLogDescription() {
-        return logDescription;
+    public String getlongDescription() {
+        return longDescription;
     }
 
-    public void setLogDescription(String logDescription) {
-        this.logDescription = logDescription;
+    public void setlongDescription(String longDescription) {
+        this.longDescription = longDescription;
     }
 
     public String getShortDescription() {
